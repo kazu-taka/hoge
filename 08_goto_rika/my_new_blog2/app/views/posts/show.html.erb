@@ -1,0 +1,20 @@
+<div class="col-md-12">
+  <h1><%= @post.title %></h1>
+  <p>カテゴリ: <%= @post.category %></p>
+  <p>投稿日:<%= @post.created_at %></p>
+  <hr>
+  <p>
+    <%= simple_format(@post.body) %>
+  </p>
+  <h3>コメント一覧</h3>
+<% @post.comments.each do |comment| %>
+  <li><%= comment.body %> - <%= comment.created_at %></li>
+<% end %>
+
+<h3>コメント</h3>
+<%= render partial: 'new_comment', locals: { comment: Comment.new(post_id: @post.id) } %>
+
+  <hr>
+  <%= link_to "編集する", edit_post_path(@post), class: "btn btn-default" %>
+  <%= link_to "削除する", post_path(@post), class: "btn btn-danger", method: :delete %>
+</div>

@@ -1,0 +1,39 @@
+<div class="col-md-12">
+  <h1><%= @post.title %></h1>
+  <p>カテゴリ: <%= @post.category %></p>
+  <p>投稿日:<%= @post.created_at %></p>
+  <hr>
+  <p>
+    <%= simple_format(@post.body) %>
+  </p>
+  <hr>
+  <%= link_to "編集", edit_post_path(@post), class: "btn btn-default" %>
+  <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete-house">削除</button>
+  <hr>
+    <%= form_for @comment, url: {controller: :comments, action: :create} do |f| %>
+      <div class="form-group">
+        <%= f.label :body, 'コメント' %><br>
+        <%= f.text_area :body %>
+      </div>
+      <%= f.hidden_field :house_id, value: @post.id %>
+      <%= f.submit '投稿する', class: "btn btn-default"  %>
+    <% end %>
+</div>
+
+<div class="modal fade" id="delete-house">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">記事の削除</h4>
+      </div>
+      <div class="modal-body">
+        <p>本当に削除しますか？</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">キャンセル</button>
+        <%= link_to '削除する', @Post, method: :delete, class: "btn btn-danger" %>
+      </div>
+    </div>
+  </div>
+</div>

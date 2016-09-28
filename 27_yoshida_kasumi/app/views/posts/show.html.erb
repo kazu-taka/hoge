@@ -1,0 +1,28 @@
+<div class="col-md-12">
+  <h1><%= @post.title %></h1>
+  <p>カテゴリ: <%= @post.category %></p>
+  <p>投稿日:<%= @post.created_at %></p>
+  <hr>
+  <p>
+    <%= simple_format(@post.body) %>
+  </p>
+  <hr>
+  <%= link_to "編集", edit_post_path(@post), class: "btn btn-default" %>
+  <%= link_to "削除", post_path(@post), class: "btn btn-default", method: :delete %>
+</div>
+
+
+<div class="col-md-4">
+  <div class="thumbnail">
+    
+  </div>
+  <div class="list-group">
+    <% @new_posts.each_with_index do |post, index| %>
+    <% if index >= 5
+         break
+       end
+    %>
+    <%= link_to post.title, post, class: "list-group-item" %>
+    <% end %>
+  </div>
+</div>

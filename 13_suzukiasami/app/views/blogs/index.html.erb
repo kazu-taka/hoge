@@ -1,0 +1,58 @@
+<div class="row">
+  <div class="blogs">
+<%= form_tag blogs_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
+      
+        <div class="blog">
+         
+          <p>29回目</p>
+         
+          <p>未分類</p>
+          <%= truncate("29回目の投稿です。年齢不問、経験不問、職歴不問。プログラミングを学びたいという”強い思い”を持っている人が対象のプログラミング学習イベントです") %>
+
+ <p>28回目</p>
+         
+          <p>未分類</p>
+          <%= truncate("28回目の投稿です。年齢不問、経験不問、職歴不問。プログラミングを学びたいという”強い思い”を持っている人が対象のプログラミング学習イベントです。
+
+") %>
+       
+          <!-- ここまで追加 -->
+      
+        </div>
+        <div class=profile>
+        <div style="text-align : right"><%= image_tag '49716-1.png',:width => '300', :height => '400' %>
+        <div class=author>
+        <p>著者名:八幡太郎</p>
+        </div>
+        <p>著者詳細:八幡平の太郎です。</p>
+        </div> 
+        </div>
+      </div>
+   <%= paginate @blogs %>
+   
+
+  </div>
+</div>
+<div class="modal fade" id="delete-house">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">物件情報の削除</h4>
+      </div>
+      <div class="modal-body">
+        <p><%= @blogs.name %>を削除しますか？</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">キャンセル</button>
+        <%= link_to '削除する', @house, method: :delete, class: "btn btn-danger" %>
+      </div>
+    </div>
+  </div>
+ 
+</div>

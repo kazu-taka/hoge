@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyNewBlog</title>
+  <link rel="stylesheet" media="all" href="/assets/application-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css" data-turbolinks-track="true" />
+  <script src="/assets/application-47feac84829615907e7d9e9e4f934dda30e6ccdaf38f2cd263a63797d486050d.js" data-turbolinks-track="true"></script>
+  <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="7KHKqeXDhn1hVUkyhSQw2syTj3lTUo/PCu+cK0HUN4fZwjztQDJleBQlR4Sid8Q8GIo/LQZ+bNNX+SRflByDGA==" />
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/posts">MyBlog</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="/posts">トップページ</a></li>
+        <li><a href="/posts/new">新規投稿</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+          <li><a href="/authors/sign_up">サインアップ</a></li>
+          <li><a href="/authors/sign_in">ログイン</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<div class="container">
+
+
+  <div class="row">
+  <div class="col-md-8">
+
+    <form class="form-inline">
+      <div class="form-group">
+        <form class="post_search" id="post_search" action="/posts" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+          <input placeholder="タイトルか本文を検索" class="form-control" type="search" name="q[title_or_body_cont]" id="q_title_or_body_cont" />
+      </div>
+          <input type="submit" name="commit" value="検索" class="btn btn-primary" />
+</form>    </form>
+
+      <ul class="pagination">
+    
+    
+          <li class='active'>
+    <a remote="false">1</a>
+  </li>
+
+          <li>
+    <a rel="next" href="/posts?page=2">2</a>
+  </li>
+
+          <li>
+    <a href="/posts?page=3">3</a>
+  </li>
+
+          <li>
+    <a href="/posts?page=4">4</a>
+  </li>
+
+    <li>
+  <a rel="next" href="/posts?page=2">&rsaquo;</a>
+</li>
+
+    <li>
+  <a href="/posts?page=4">&raquo;</a>
+</li>
+
+  </ul>
+
+  </div>
+  <div class="col-md-4">
+    <div class="thumbnail">
+      <img src="http://livedoor.4.blogimg.jp/vsokuvip/imgs/7/2/7265ec41.jpg"/>
+      <div class="caption">
+        <h3>著者名:鈴木麻美</h3>
+        <p>著者詳細:麻美ちゃんの本だよ!!</p>
+      </div>
+    </div>
+
+    <div class="list-group">
+        
+    </div>
+    <h3>最新コメント一覧</h3>
+    <div class="list-group">
+    </div>
+  </div>
+</div>
+</div>
+</body>
+</html>

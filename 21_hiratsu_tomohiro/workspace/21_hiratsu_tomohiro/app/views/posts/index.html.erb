@@ -1,0 +1,27 @@
+
+<div class="col-md-8">
+  <% @posts.each do |post| %>
+    <div class="article">
+      <h2>タイトル：<%= post.title %></h2>
+      <p>カテゴリ：<%= post.category %></p>
+      <p>作成日：<%= post.created_at %></p>
+      <p><%= truncate(post.body, length: 50) %></p>
+      <p><%= link_to "続きを読む", post, class: "btn btn-default" %></p>
+    </div>
+  <% end %>
+</div>
+
+<div class="col-md-4">
+  <div class="thumbnail">
+      <h3>著者名：<%= "八幡太郎" %></h3>
+      <p>著者詳細：<%= "八幡平の太郎です。" %></p>
+    </div>
+  </div>
+  <div class="list-group">
+    <% @posts.each do |post| %>
+    <%= link_to post.title, post, class: "list-group-item" %>
+    <% end %>
+  </div>
+</div>
+
+    <%= paginate @posts %>
