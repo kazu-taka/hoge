@@ -1,0 +1,21 @@
+<table>
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>タイトル</th>
+      <th>本文</th>
+      <th>カテゴリ</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @Posts.each do |post| %>
+      <tr>
+        <td><%= post.id %></td>
+        <td><%= post.title %></td>
+        <td><%= post.body %></td>
+        <td><%= post.category %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
